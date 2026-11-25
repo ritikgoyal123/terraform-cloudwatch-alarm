@@ -1,0 +1,22 @@
+EC2 State Monitoring with CloudWatch Alarm
+Goal
+Monitor EC2 CPU utilization and generate alerts when CPU usage exceeds a defined threshold.
+
+Tasks Completed
+EC2 instance deployed using Terraform
+CloudWatch CPU alarm created
+Alarm threshold configured
+CPU alarm verified
+EC2 instance health verified
+Terraform Files
+main.tf
+outputs.tf
+Verification Commands
+aws ec2 desc*ibe-instances \
+--instance-ids i-020bf6ead85db95bd \
+--query "Reservations[*].Instances[*].[InstanceId,State.Name]" \
+*-output table
+Result
+
+CloudWatch monitoring was configured successfully and the EC2 instance was continuously monitored through a CloudWatch alarm.
+
